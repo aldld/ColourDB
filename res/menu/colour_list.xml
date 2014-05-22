@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.colourdb.ColourList" >
+
+    <!-- 
+    <item
+        android:id="@+id/search_button"
+        android:title="@string/search_button"
+        app:showAsAction="withText|ifRoom"/>
+    -->
+ 
+</menu>
