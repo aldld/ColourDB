@@ -65,7 +65,7 @@ public class ColourGrid extends ActionBarActivity implements
 		fragmentManager
 				.beginTransaction()
 				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+						MainFragment.newInstance(position + 1)).commit();
 	}
 
 	public void onSectionAttached(int number) {
@@ -113,9 +113,9 @@ public class ColourGrid extends ActionBarActivity implements
 	}
 
 	/**
-	 * A placeholder fragment containing a simple view.
+	 * The fragment containing the main colour grid view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
+	public static class MainFragment extends Fragment {
 		/**
 		 * The fragment argument representing the section number for this
 		 * fragment.
@@ -125,15 +125,15 @@ public class ColourGrid extends ActionBarActivity implements
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
+		public static MainFragment newInstance(int sectionNumber) {
+			MainFragment fragment = new MainFragment();
 			Bundle args = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 			fragment.setArguments(args);
 			return fragment;
 		}
 
-		public PlaceholderFragment() {
+		public MainFragment() {
 		}
 
 		@Override
