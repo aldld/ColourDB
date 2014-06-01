@@ -113,8 +113,8 @@ public class Marker {
 	 * @param haveIt the haveIt to set
 	 */
 	public void setHaveIt(boolean haveIt) {
-		markerDB.setHaveIt(id, haveIt);
-		this.haveIt = haveIt;
+		if (markerDB.setHaveIt(id, haveIt))
+			this.haveIt = haveIt;
 	}
 
 	/**
@@ -128,7 +128,8 @@ public class Marker {
 	 * @param needsRefill the needsRefill to set
 	 */
 	public void setNeedsRefill(boolean needsRefill) {
-		this.needsRefill = needsRefill;
+		if (markerDB.setNeedsRefill(id, needsRefill))
+			this.needsRefill = needsRefill;
 	}
 
 	/**

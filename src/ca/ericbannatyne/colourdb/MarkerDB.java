@@ -64,5 +64,11 @@ public class MarkerDB {
 		values.put("haveIt", haveIt ? 1 : 0);
 		return db.update("marker", values, "id=?", new String[] { "" + id }) > 0;
 	}
+	
+	public boolean setNeedsRefill(int id, boolean needsRefill) {
+		ContentValues values = new ContentValues();
+		values.put("needsRefill", needsRefill ? 1 : 0);
+		return db.update("marker", values, "id=?", new String[] { "" + id }) > 0;
+	}
 
 }

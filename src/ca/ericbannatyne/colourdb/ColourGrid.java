@@ -9,23 +9,27 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
-import ca.ericbannatyne.colourdb.R;
 
 public class ColourGrid extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
-	
+
 	private static String TAG = "ColourGrid";
+	
+	private Marker[] displayedMarkers;
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
@@ -51,8 +55,7 @@ public class ColourGrid extends ActionBarActivity implements
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
-		
-		
+
 	}
 
 	@Override
@@ -136,22 +139,28 @@ public class ColourGrid extends ActionBarActivity implements
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
+
+			// Log.d(TAG, "onCreateView called");
+
 			View rootView = inflater.inflate(R.layout.fragment_colour_list,
 					container, false);
+
 			/*
-			TextView textView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			textView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-					*/
-			
+			 * TextView textView = (TextView) rootView
+			 * .findViewById(R.id.section_label);
+			 * textView.setText(Integer.toString(getArguments().getInt(
+			 * ARG_SECTION_NUMBER)));
+			 */
+
 			// Set up the colour grid.
-			GridView colourGrid = (GridView) rootView.findViewById(R.id.colour_grid);
+			GridView colourGrid = (GridView) rootView
+					.findViewById(R.id.colour_grid);
 			if (colourGrid == null) {
 				Log.d(TAG, "colourGrid is null");
 			}
+			registerForContextMenu(colourGrid);
 			colourGrid.setAdapter(new ColourAdapter(rootView.getContext()));
-			
+
 			colourGrid.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
@@ -159,11 +168,13 @@ public class ColourGrid extends ActionBarActivity implements
 						int position, long id) {
 					// TODO: on click response
 					/*
-					Toast.makeText(getView().getContext(), "" + position, Toast.LENGTH_SHORT).show();
-					view.setBackgroundColor(Color.RED);
-					*/
+					 * Toast.makeText(getView().getContext(), "" + position,
+					 * Toast.LENGTH_SHORT).show();
+					 * view.setBackgroundColor(Color.RED);
+					 */
 					TextView textView = (TextView) view;
-					Marker marker = MarkerDB.getInstance(view.getContext()).getAllMarkersArray()[position];
+					Marker marker = MarkerDB.getInstance(view.getContext())
+							.getAllMarkersArray()[position];
 					if (marker.haveIt()) {
 						// TODO: refactor to make this nicer
 						marker.setHaveIt(false);
@@ -175,23 +186,9 @@ public class ColourGrid extends ActionBarActivity implements
 						Marker.setTextColorFromBakground(marker, textView);
 					}
 				}
-				
-			});
-			
-			colourGrid.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-				@Override
-				public boolean onItemLongClick(AdapterView<?> parent,
-						View view, int position, long id) {
-					// TODO Auto-generated method stub
-					// TODO: menu
-					Toast.makeText(getView().getContext(), "L" + position, Toast.LENGTH_SHORT).show();
-					//view.setBackgroundColor(Color.CYAN);
-					return true; // Stop from proceeding to ordinary click
-				}
-				
 			});
-			
+
 			return rootView;
 		}
 
@@ -200,6 +197,38 @@ public class ColourGrid extends ActionBarActivity implements
 			super.onAttach(activity);
 			((ColourGrid) activity).onSectionAttached(getArguments().getInt(
 					ARG_SECTION_NUMBER));
+		}
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.colour_menu, menu);
+		
+		// TODO: work for other displays, not just all colours
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
+		Marker[] markersArray = MarkerDB.getInstance(getApplicationContext()).getAllMarkersArray();
+		Marker marker = markersArray[info.position];
+		menu.setHeaderTitle(marker.getCode() + ": " + marker.getName());
+		
+		menu.getItem(0).setChecked(marker.needsRefill());
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+		switch (item.getItemId()) {
+		case R.id.needs_refill:
+			item.setChecked(!item.isChecked());
+
+			Marker[] markersArray = MarkerDB.getInstance(getApplicationContext()).getAllMarkersArray();
+			Marker marker = markersArray[info.position];
+			marker.setNeedsRefill(!marker.needsRefill());
+			return true;
+		default:
+			return super.onContextItemSelected(item);
 		}
 	}
 
