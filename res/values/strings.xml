@@ -9,5 +9,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="search_button">Search</string>
     <string name="needs_refill">Needs Refill</string>
+    <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
 
 </resources>

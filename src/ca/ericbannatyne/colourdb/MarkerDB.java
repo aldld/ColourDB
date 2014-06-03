@@ -15,36 +15,17 @@ public class MarkerDB {
 	
 	private static MarkerDB instance = null;
 	
+	private static final String[] fullProjection = { "id", "code", "family",
+		"name", "color", "wantIt", "haveIt", "needsRefill" };
+	
 	private MarkerDBHelper dbHelper;
 	private SQLiteDatabase db;
-	
-	private Marker[] allMarkers;
 	
 	private MarkerDB(Context context) {
 		dbHelper = new MarkerDBHelper(context);
 		Log.d(TAG, "dbHelper created");
 		db = dbHelper.getWritableDatabase();
 		Log.d(TAG, "getWritableDatabase called");
-		
-		String[] projection = { "id", "code", "family", "name", "color",
-				"wantIt", "haveIt", "needsRefill" };
-		
-		Cursor c = db.query("marker", projection, null, null, null, null, "id ASC");
-		allMarkers = new Marker[c.getCount()];
-		//c.moveToFirst();
-		int i = 0;
-		while (c.moveToNext()) {
-			allMarkers[i] = new Marker(this, c.getInt(c.getColumnIndex("id")),
-					c.getString(c.getColumnIndex("code")),
-					c.getInt(c.getColumnIndex("family")),
-					c.getString(c.getColumnIndex("name")),
-					c.getInt(c.getColumnIndex("color")),
-					c.getInt(c.getColumnIndex("wantIt")) > 0,
-					c.getInt(c.getColumnIndex("haveIt")) > 0,
-					c.getInt(c.getColumnIndex("needsRefill")) > 0
-					);
-			i++;
-		}
 	}
 	
 	public static MarkerDB getInstance(Context context) {
@@ -55,8 +36,31 @@ public class MarkerDB {
 		return instance;
 	}
 	
+	/*
 	public Marker[] getAllMarkersArray() {
 		return allMarkers;
+	}
+	*/
+	
+	public Marker[] queryMarkers(String where, String[] whereArgs) {
+		Cursor c = db.query("marker", fullProjection, where, whereArgs, null, null, "id ASC");
+		Marker[] result = new Marker[c.getCount()];
+		
+		int i = 0;
+		while (c.moveToNext()) {
+			result[i] = new Marker(this, c.getInt(c.getColumnIndex("id")),
+					c.getString(c.getColumnIndex("code")),
+					c.getInt(c.getColumnIndex("family")),
+					c.getString(c.getColumnIndex("name")),
+					c.getInt(c.getColumnIndex("color")),
+					c.getInt(c.getColumnIndex("wantIt")) > 0,
+					c.getInt(c.getColumnIndex("haveIt")) > 0,
+					c.getInt(c.getColumnIndex("needsRefill")) > 0
+					);
+			i++;
+		}
+		
+		return result;
 	}
 	
 	public boolean setHaveIt(int id, boolean haveIt) {

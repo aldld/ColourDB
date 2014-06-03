@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.ViewGroup.LayoutParams;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,7 +23,6 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ColourGrid extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -139,42 +139,36 @@ public class ColourGrid extends ActionBarActivity implements
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-
-			// Log.d(TAG, "onCreateView called");
-
 			View rootView = inflater.inflate(R.layout.fragment_colour_list,
 					container, false);
-
-			/*
-			 * TextView textView = (TextView) rootView
-			 * .findViewById(R.id.section_label);
-			 * textView.setText(Integer.toString(getArguments().getInt(
-			 * ARG_SECTION_NUMBER)));
-			 */
 
 			// Set up the colour grid.
 			GridView colourGrid = (GridView) rootView
 					.findViewById(R.id.colour_grid);
-			if (colourGrid == null) {
-				Log.d(TAG, "colourGrid is null");
-			}
-			registerForContextMenu(colourGrid);
-			colourGrid.setAdapter(new ColourAdapter(rootView.getContext()));
+			
+			
+			int filter = getArguments().getInt(ARG_SECTION_NUMBER);
+			
+			if (filter == 3) { // TODO: extract constants
+				// If no markers needing refills to display, explain how to
+				// mark a colour as needing a refill.
+				TextView needsRefillMessage = (TextView) rootView.findViewById(
+						R.id.need_refills_empty);
 
+				colourGrid.setEmptyView(needsRefillMessage);
+				Log.d(TAG, "filter == 3");
+			}
+
+			registerForContextMenu(colourGrid);
+
+			colourGrid.setAdapter(new ColourAdapter(rootView.getContext(), filter));
 			colourGrid.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
-					// TODO: on click response
-					/*
-					 * Toast.makeText(getView().getContext(), "" + position,
-					 * Toast.LENGTH_SHORT).show();
-					 * view.setBackgroundColor(Color.RED);
-					 */
 					TextView textView = (TextView) view;
-					Marker marker = MarkerDB.getInstance(view.getContext())
-							.getAllMarkersArray()[position];
+					Marker marker = ((ColourAdapter) parent.getAdapter()).getMarker(position);
 					if (marker.haveIt()) {
 						// TODO: refactor to make this nicer
 						marker.setHaveIt(false);
@@ -207,10 +201,11 @@ public class ColourGrid extends ActionBarActivity implements
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.colour_menu, menu);
 		
-		// TODO: work for other displays, not just all colours
+		GridView gridView = (GridView) v;
+		ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
+		
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
-		Marker[] markersArray = MarkerDB.getInstance(getApplicationContext()).getAllMarkersArray();
-		Marker marker = markersArray[info.position];
+		Marker marker = adapter.getMarker(info.position);
 		menu.setHeaderTitle(marker.getCode() + ": " + marker.getName());
 		
 		menu.getItem(0).setChecked(marker.needsRefill());
@@ -222,10 +217,17 @@ public class ColourGrid extends ActionBarActivity implements
 		switch (item.getItemId()) {
 		case R.id.needs_refill:
 			item.setChecked(!item.isChecked());
-
-			Marker[] markersArray = MarkerDB.getInstance(getApplicationContext()).getAllMarkersArray();
-			Marker marker = markersArray[info.position];
+			
+			GridView gridView = (GridView) info.targetView.getParent();;
+			ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
+			
+			Marker marker = adapter.getMarker(info.position);
 			marker.setNeedsRefill(!marker.needsRefill());
+			if (adapter.getFilter() == 3) { // TODO: extract constants
+				adapter.refresh();
+				adapter.notifyDataSetChanged();
+			}
+			
 			return true;
 		default:
 			return super.onContextItemSelected(item);

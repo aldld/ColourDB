@@ -17,15 +17,36 @@ public class ColourAdapter extends BaseAdapter {
 
 	private Context mContext;
 	private MarkerDB markerDB;
+	
+	private int filter;
+	private String[] filterWhereClause = { null, "", "haveIt=1", "needsRefill=1" };
+	
+	private Marker[] markerArray;
 
-	public ColourAdapter(Context c) {
+	public ColourAdapter(Context c, int filter) {
 		mContext = c;
 		markerDB = MarkerDB.getInstance(c);
+		
+		this.filter = filter;
+		markerArray = markerDB.queryMarkers(filterWhereClause[filter], null);
 	}
-
+	
+	public int getFilter() {
+		return filter;
+	}
+	
+	public Marker getMarker(int position) {
+		return markerArray[position];
+	}
+	
+	public void refresh() {
+		markerArray = markerDB.queryMarkers(filterWhereClause[filter], null);
+	}
+	
 	@Override
 	public int getCount() {
-		return markerDB.getAllMarkersArray().length;
+		//return markerDB.getAllMarkersArray().length;
+		return markerArray.length;
 	}
 
 	@Override
@@ -43,7 +64,8 @@ public class ColourAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		TextView textView;
-		Marker marker = markerDB.getAllMarkersArray()[position];
+		//Marker marker = markerDB.getAllMarkersArray()[position];
+		Marker marker = markerArray[position];
 
 		if (convertView == null) {
 			textView = new TextView(mContext);
