@@ -3,7 +3,6 @@ package ca.ericbannatyne.colourdb;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -13,13 +12,16 @@ import android.widget.TextView;
 
 public class ColourAdapter extends BaseAdapter {
 
-	private static String TAG = "ColourAdapter";
-
 	private Context mContext;
 	private MarkerDB markerDB;
 	
 	private int filter;
-	private String[] filterWhereClause = { null, "", "haveIt=1", "needsRefill=1" };
+	private final String[] filterWhereClause = {
+			null,
+			"", 
+			MarkerDBContract.Marker.COL_HAVE_IT + "=1",
+			MarkerDBContract.Marker.COL_NEEDS_REFILL + "=1"
+			};
 	
 	private Marker[] markerArray;
 
@@ -35,9 +37,11 @@ public class ColourAdapter extends BaseAdapter {
 		return filter;
 	}
 	
+	/*
 	public Marker getMarker(int position) {
 		return markerArray[position];
 	}
+	*/
 	
 	public void refresh() {
 		markerArray = markerDB.queryMarkers(filterWhereClause[filter], null);
@@ -45,26 +49,22 @@ public class ColourAdapter extends BaseAdapter {
 	
 	@Override
 	public int getCount() {
-		//return markerDB.getAllMarkersArray().length;
 		return markerArray.length;
 	}
 
 	@Override
 	public Object getItem(int position) {
-		// TODO Auto-generated method stub
-		return null;
+		return markerArray[position];
 	}
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
-		return 0;
+		return markerArray[position].getID();
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		TextView textView;
-		//Marker marker = markerDB.getAllMarkersArray()[position];
 		Marker marker = markerArray[position];
 
 		if (convertView == null) {
@@ -75,7 +75,6 @@ public class ColourAdapter extends BaseAdapter {
 
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					LinearLayout.LayoutParams.MATCH_PARENT,
-					//LinearLayout.LayoutParams.MATCH_PARENT);
 					displayWidth / 5);
 
 			textView.setLayoutParams(new GridView.LayoutParams(params));

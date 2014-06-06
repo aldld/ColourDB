@@ -8,10 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.ViewGroup.LayoutParams;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,10 +24,6 @@ import android.widget.TextView;
 
 public class ColourGrid extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
-
-	private static String TAG = "ColourGrid";
-	
-	private Marker[] displayedMarkers;
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
@@ -107,7 +101,7 @@ public class ColourGrid extends ActionBarActivity implements
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
+		//int id = item.getItemId();
 
 		return super.onOptionsItemSelected(item);
 	}
@@ -156,7 +150,6 @@ public class ColourGrid extends ActionBarActivity implements
 						R.id.need_refills_empty);
 
 				colourGrid.setEmptyView(needsRefillMessage);
-				Log.d(TAG, "filter == 3");
 			}
 
 			registerForContextMenu(colourGrid);
@@ -168,7 +161,8 @@ public class ColourGrid extends ActionBarActivity implements
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 					TextView textView = (TextView) view;
-					Marker marker = ((ColourAdapter) parent.getAdapter()).getMarker(position);
+					ColourAdapter adapter = (ColourAdapter) parent.getAdapter();
+					Marker marker = (Marker) adapter.getItem(position);
 					if (marker.haveIt()) {
 						// TODO: refactor to make this nicer
 						marker.setHaveIt(false);
@@ -205,7 +199,7 @@ public class ColourGrid extends ActionBarActivity implements
 		ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
 		
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
-		Marker marker = adapter.getMarker(info.position);
+		Marker marker = (Marker) adapter.getItem(info.position);
 		menu.setHeaderTitle(marker.getCode() + ": " + marker.getName());
 		
 		menu.getItem(0).setChecked(marker.needsRefill());
@@ -221,7 +215,7 @@ public class ColourGrid extends ActionBarActivity implements
 			GridView gridView = (GridView) info.targetView.getParent();;
 			ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
 			
-			Marker marker = adapter.getMarker(info.position);
+			Marker marker = (Marker) adapter.getItem(info.position);
 			marker.setNeedsRefill(!marker.needsRefill());
 			if (adapter.getFilter() == 3) { // TODO: extract constants
 				adapter.refresh();

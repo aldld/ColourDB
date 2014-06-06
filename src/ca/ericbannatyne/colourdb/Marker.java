@@ -1,12 +1,9 @@
 package ca.ericbannatyne.colourdb;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.widget.TextView;
 
 public class Marker {
-	
-	private static final String TAG = "Marker";
 	
 	public static final int BLACKS_BLENDER = 0;
 	public static final int BLUE_GREEN = 1;
