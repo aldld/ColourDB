@@ -19,23 +19,9 @@ public class MarkerDBHelper extends SQLiteOpenHelper {
 	
 	private Context context;
 	
-	/*
-	private static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
-			+ "marker ("
-			+ "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ "code TEXT, "
-			+ "family INTEGER, "
-			+ "name TEXT, "
-			+ "color INTEGER, "
-			+ "wantIt INTEGER, "
-			+ "haveIt INTEGER, "
-			+ "needsRefill INTEGER);"; // FIXME: use contract class
-			*/
-
 	public MarkerDBHelper(Context context) {
 		super(context, MarkerDBContract.DB_NAME, null, MarkerDBContract.DB_VERSION);
 		this.context = context;
-		// context.deleteDatabase(DB_NAME); // FIXME For debugging purposes
 	}
 
 	@Override
@@ -76,7 +62,6 @@ public class MarkerDBHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
 	}
 
 }

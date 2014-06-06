@@ -11,12 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ColourAdapter extends BaseAdapter {
+	
+	public static final int FILTER_ALL_COLOURS = 1;
+	public static final int FILTER_MY_COLOURS = 2;
+	public static final int FILTER_NEED_REFILLS = 3;
 
 	private Context mContext;
 	private MarkerDB markerDB;
 	
 	private int filter;
-	private final String[] filterWhereClause = {
+	private static final String[] filterWhereClause = {
 			null,
 			"", 
 			MarkerDBContract.Marker.COL_HAVE_IT + "=1",
@@ -36,12 +40,6 @@ public class ColourAdapter extends BaseAdapter {
 	public int getFilter() {
 		return filter;
 	}
-	
-	/*
-	public Marker getMarker(int position) {
-		return markerArray[position];
-	}
-	*/
 	
 	public void refresh() {
 		markerArray = markerDB.queryMarkers(filterWhereClause[filter], null);
@@ -85,15 +83,8 @@ public class ColourAdapter extends BaseAdapter {
 
 		textView.setText(marker.getCode());
 		textView.setBackgroundColor(marker.haveIt() ? marker.getColor() : Color.WHITE);
-		if (marker.haveIt()) {
-			textView.setBackgroundColor(marker.getColor());
 
-			Marker.setTextColorFromBakground(marker, textView);
-		} else {
-			// TODO: Refactor to make this nicer
-			textView.setBackgroundColor(Color.WHITE);
-			textView.setTextColor(Color.LTGRAY);
-		}
+		marker.setViewColor(textView);
 		return textView;
 	}
 

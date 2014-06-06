@@ -1,7 +1,6 @@
 package ca.ericbannatyne.colourdb;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -101,7 +100,6 @@ public class ColourGrid extends ActionBarActivity implements
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		//int id = item.getItemId();
 
 		return super.onOptionsItemSelected(item);
 	}
@@ -143,7 +141,7 @@ public class ColourGrid extends ActionBarActivity implements
 			
 			int filter = getArguments().getInt(ARG_SECTION_NUMBER);
 			
-			if (filter == 3) { // TODO: extract constants
+			if (filter == ColourAdapter.FILTER_NEED_REFILLS) { 
 				// If no markers needing refills to display, explain how to
 				// mark a colour as needing a refill.
 				TextView needsRefillMessage = (TextView) rootView.findViewById(
@@ -163,16 +161,9 @@ public class ColourGrid extends ActionBarActivity implements
 					TextView textView = (TextView) view;
 					ColourAdapter adapter = (ColourAdapter) parent.getAdapter();
 					Marker marker = (Marker) adapter.getItem(position);
-					if (marker.haveIt()) {
-						// TODO: refactor to make this nicer
-						marker.setHaveIt(false);
-						textView.setBackgroundColor(Color.WHITE);
-						textView.setTextColor(Color.LTGRAY);
-					} else {
-						marker.setHaveIt(true);
-						textView.setBackgroundColor(marker.getColor());
-						Marker.setTextColorFromBakground(marker, textView);
-					}
+					
+					marker.setHaveIt(!marker.haveIt());
+					marker.setViewColor(textView);
 				}
 
 			});
@@ -217,7 +208,7 @@ public class ColourGrid extends ActionBarActivity implements
 			
 			Marker marker = (Marker) adapter.getItem(info.position);
 			marker.setNeedsRefill(!marker.needsRefill());
-			if (adapter.getFilter() == 3) { // TODO: extract constants
+			if (adapter.getFilter() == ColourAdapter.FILTER_NEED_REFILLS) {
 				adapter.refresh();
 				adapter.notifyDataSetChanged();
 			}

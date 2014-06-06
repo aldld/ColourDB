@@ -34,14 +34,24 @@ public class Marker {
 		return null;
 	}
 	
-	public static void setTextColorFromBakground(Marker marker, TextView textView) {
+	public void setTextColorFromBakground(TextView textView) {
 		float[] hsv = new float[3];
-		Color.colorToHSV(marker.getColor(), hsv);
+		Color.colorToHSV(getColor(), hsv);
 		
 		if (hsv[2] > 0.5) {
 			textView.setTextColor(Color.BLACK);
 		} else {
 			textView.setTextColor(Color.WHITE);
+		}
+	}
+	
+	public void setViewColor(TextView textView) {
+		if (haveIt()) {
+			textView.setBackgroundColor(getColor());
+			setTextColorFromBakground(textView);
+		} else {
+			textView.setBackgroundColor(Color.WHITE);
+			textView.setTextColor(Color.LTGRAY);
 		}
 	}
 	

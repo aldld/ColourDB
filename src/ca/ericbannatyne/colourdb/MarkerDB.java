@@ -14,11 +14,6 @@ public class MarkerDB {
 	
 	private static MarkerDB instance = null;
 	
-	/*
-	private static final String[] fullProjection = { "id", "code", "family",
-		"name", "color", "wantIt", "haveIt", "needsRefill" };
-		*/
-
 	private static final String[] fullProjection = {
 		MarkerDBContract.Marker.COL_ID,
 		MarkerDBContract.Marker.COL_CODE,
