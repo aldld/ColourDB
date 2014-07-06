@@ -11,7 +11,6 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class MarkerDBHelper extends SQLiteOpenHelper {
 	
@@ -27,7 +26,6 @@ public class MarkerDBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(MarkerDBContract.Marker.CREATE_TABLE);
-		Log.d(TAG, "onCreate called");
 		
 		AssetManager assetManager = context.getAssets();
 		try {

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Colour DB</string>
+    <string name="app_name">Copic Colour DB</string>
+
     <string name="title_all_colours">All Colours</string>
     <string name="title_my_colours">My Colours</string>
     <string name="title_need_refills">Need Refills</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="search_button">Search</string>
     <string name="needs_refill">Needs Refill</string>
     <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
