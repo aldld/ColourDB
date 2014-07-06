@@ -1,5 +1,5 @@
-ColourDB is an Android app for managing an inventory of markers of various
-colours. ColourDB identifies colours using the Copic colour code format.
+Copic ColourDB is an Android app for managing an inventory of markers using the
+Copic colour code system.
 
 To add a colour to your inventory, simply tap the square labeled with the
 appropriate colour code. To remove it, simply tap it again. To mark a colour as
