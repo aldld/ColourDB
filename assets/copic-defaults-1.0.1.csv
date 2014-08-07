@@ -1,0 +1,358 @@
+0,0,Colorless Blender,-1,0,0,0
+100,0,Black,-13554901,0,0,0
+110,0,Special Black,-16578808,0,0,0
+B0000,3,Pale Celestine,-984578,0,0,0
+B000,3,Pale Porcelain Blue,-1641227,0,0,0
+B00,3,Frost Blue,-2232076,0,0,0
+B01,3,Mint Blue,-2691342,0,0,0
+B02,3,Robin's Egg Blue,-4987919,0,0,0
+B04,3,Tahitian Blue,-9187354,0,0,0
+B05,3,Process Blue,-12532250,0,0,0
+B06,3,Peacock Blue,-16731162,0,0,0
+B12,3,Ice Blue,-3610896,0,0,0
+B14,3,Light Blue,-9318421,0,0,0
+B16,3,Cyanine Blue,-16728854,0,0,0
+B18,3,Lapis Lazuli,-14841141,0,0,0
+B21,3,Baby Blue,-2363911,0,0,0
+B23,3,Phthalo Blue,-7159064,0,0,0
+B24,3,Sky,-7680269,0,0,0
+B26,3,Cobalt Blue,-10112029,0,0,0
+B28,3,Royal Blue,-15110730,0,0,0
+B29,3,Ultramarine,-16681023,0,0,0
+B32,3,Pale Blue,-1904649,0,0,0
+B34,3,Manganese Blue,-8207379,0,0,0
+B37,3,Antwerp Blue,-15372380,0,0,0
+B39,3,Prussian Blue,-13933399,0,0,0
+B41,3,Powder Blue,-1904389,0,0,0
+B45,3,Smoky Blue,-9060118,0,0,0
+B52,3,Soft Greenish Blue,-5386788,0,0,0
+B60,3,Pale Blue Gray,-2432525,0,0,0
+B63,3,Light Hydrangea,-5784608,0,0,0
+B66,3,Clematis,-9926459,0,0,0
+B69,3,Stratospheric Blue,-14588498,0,0,0
+B79,3,Iris,-12892259,0,0,0
+B91,3,Pale Grayish Blue,-2759957,0,0,0
+B93,3,Light Crockery Blue,-6962726,0,0,0
+B95,3,Light Grayish Cobalt,-10435121,0,0,0
+B97,3,Night Blue,-12223846,0,0,0
+B99,3,Agate,-15772546,0,0,0
+BG0000,1,Snow Green,-1050381,0,0,0
+BG000,1,Pale Aqua,-1706771,0,0,0
+BG01,1,Aqua Blue,-3676422,0,0,0
+BG02,1,New Blue,-3741462,0,0,0
+BG05,1,Holiday Blue,-14829362,0,0,0
+BG07,1,Petroleum Blue,-14829362,0,0,0
+BG09,1,Blue Green,-2297617,0,0,0
+BG10,1,Cool Shadow,-2297617,0,0,0
+BG11,1,Moon White,-3216399,0,0,0
+BG13,1,Mint Green,-3872791,0,0,0
+BG15,1,Aqua,-6235694,0,0,0
+BG18,1,Teal Blue,-13123408,0,0,0
+BG23,1,Coral Sea,-4332067,0,0,0
+BG32,1,Aqua Mint,-4398377,0,0,0
+BG34,1,Horizon Green,-6038825,0,0,0
+BG45,1,Nile Blue,-5251105,0,0,0
+BG49,1,Duck Blue,-16730439,0,0,0
+BG53,1,Ice Mint,-5451823,0,0,0
+BG57,1,Jasper,-10174786,0,0,0
+BG70,1,Ocean Mist,-2429714,0,0,0
+BG72,1,Ice Ocean,-9127749,0,0,0
+BG75,1,Abyss Green,-10907250,0,0,0
+BG78,1,Bronze,-11964309,0,0,0
+BG90,1,Gray Sky,-4537927,0,0,0
+BG93,1,Green Gray,-4537927,0,0,0
+BG96,1,Bush,-8281455,0,0,0
+BG99,1,Flagstone Blue,-9528441,0,0,0
+BV0000,2,Pale Thistle,-1382414,0,0,0
+BV000,2,Iridescent Mauve,-1382414,0,0,0
+BV00,2,Mauve Shadow,-2040595,0,0,0
+BV01,2,Viola,-3880474,0,0,0
+BV02,2,Prune,-5588773,0,0,0
+BV04,2,Blue Berry,-8611890,0,0,0
+BV08,2,Blue Violet,-1382414,0,0,0
+BV11,2,Soft Violet,-2829592,0,0,0
+BV13,2,Hydrangea Blue,-8089144,0,0,0
+BV17,2,Deep Reddish Blue,-9534275,0,0,0
+BV20,2,Dull Lavender,-3154959,0,0,0
+BV23,2,Grayish Lavender,-5127971,0,0,0
+BV25,2,Grayish Violet,-8289113,0,0,0
+BV29,2,Slate,-13089448,0,0,0
+BV31,2,Pale Lavender,-1382414,0,0,0
+BV34,2,Bluebell,-6314052,0,0,0
+C00,4,Cool Gray No.00,-2037779,0,0,0
+C0,4,Cool Gray No.0,-2037779,0,0,0
+C10,4,Cool Gray No.10,-14669007,0,0,0
+C1,4,Cool Gray No.1,-2432024,0,0,0
+C2,4,Cool Gray No.2,-3352611,0,0,0
+C3,4,Cool Gray No.3,-4076334,0,0,0
+C4,4,Cool Gray No.4,-7167829,0,0,0
+C5,4,Cool Gray No.5,-7167829,0,0,0
+C6,4,Cool Gray No.6,-10260359,0,0,0
+C7,4,Cool Gray No.7,-10260359,0,0,0
+C8,4,Cool Gray No.8,-11313818,0,0,0
+C9,4,Cool Gray No.9,-12826803,0,0,0
+E0000,5,Floral White,-1292,0,0,0
+E000,5,Pale Fruit Pink,-68114,0,0,0
+E00,5,Skin White,-134166,0,0,0
+E01,5,Pink Flamingo,-4380,0,0,0
+E02,5,Fruit Pink,-70432,0,0,0
+E04,5,Lipstick Natural,-1786684,0,0,0
+E07,5,Light Mahogany,-3374742,0,0,0
+E08,5,Brown,-3513005,0,0,0
+E09,5,Burnt Sienna,-2528689,0,0,0
+E11,5,Bareley Beige,-71210,0,0,0
+E13,5,Light Suntan,-1456721,0,0,0
+E15,5,Dark Suntan,-279667,0,0,0
+E17,5,Reddish Brass,-4694185,0,0,0
+E18,5,Copper,-7842995,0,0,0
+E19,5,Redwood,-3911112,0,0,0
+E21,5,Baby Skin Pink,-138553,0,0,0
+E23,5,Hazelnut,-1258831,0,0,0
+E25,5,Caribe Cocoa,-2972542,0,0,0
+E27,5,Africano,-6719901,0,0,0
+E29,5,Burnt Umber,-7846346,0,0,0
+E30,5,Bisque,-528170,0,0,0
+E31,5,Brick Beige,-858418,0,0,0
+E33,5,Sand,-798031,0,0,0
+E34,5,Orientale,-996698,0,0,0
+E35,5,Chamois,-1653853,0,0,0
+E37,5,Sepia,-3370663,0,0,0
+E39,5,Leather,-3836865,0,0,0
+E40,5,Brick White,-857892,0,0,0
+E41,5,Pearl White,-69151,0,0,0
+E42,5,Sand White,-791847,0,0,0
+E43,5,Dull Ivory,-1516867,0,0,0
+E44,5,Clay,-7704999,0,0,0
+E47,5,Dark Brown,-7704999,0,0,0
+E49,5,Dark Bark,-10269636,0,0,0
+E50,5,Egg Shell,-726032,0,0,0
+E51,5,Milky White,-70442,0,0,0
+E53,5,Raw Silk,-925767,0,0,0
+E55,5,Light Camel,-925767,0,0,0
+E57,5,Light Walnut,-5143208,0,0,0
+E59,5,Walnut,-6652052,0,0,0
+E70,5,Ash Rose,-1053978,0,0,0
+E71,5,Champagne,-6192004,0,0,0
+E74,5,Cocoa Brown,-6192004,0,0,0
+E77,5,Maroon,-8429490,0,0,0
+E79,5,Cashew,-11916254,0,0,0
+E81,5,Ivory,-989502,0,0,0
+E84,5,Khaki,-5333120,0,0,0
+E87,5,Fig,-9478067,0,0,0
+E89,5,Pecan,-10860231,0,0,0
+E93,5,Tea Rose,-77127,0,0,0
+E95,5,Flesh Pink,-213890,0,0,0
+E97,5,Deep Orange,-4956108,0,0,0
+E99,5,Baked Clay,-4956108,0,0,0
+FRV1,16,Fluorescent Pink,-678969,0,0,0
+FYG1,16,Fluorescent Yellow,-3154528,0,0,0
+FV2,16,Fluorescent Dull Violet,-8424266,0,0,0
+FYG2,16,Fluorescent Dull Yellow Green,-8358730,0,0,0
+FBG2,16,Fluorescent Dull Blue Green,-10236954,0,0,0
+FB2,16,Fluorescent Dull Blue,-16740147,0,0,0
+FY1,16,Fluorescent Yellow Orange,-2409,0,0,0
+FYR1,16,Fluorescent Orange,-78695,0,0,0
+G0000,6,Crystal Opal,-919565,0,0,0
+G000,6,Pale Green,-1378835,0,0,0
+G00,6,Jade Green,-1838355,0,0,0
+G02,6,Spectrum Green,-3151661,0,0,0
+G03,6,Meadow Green,-4793700,0,0,0
+G05,6,Emerald Green,-9846661,0,0,0
+G07,6,Nile Green,-8665738,0,0,0
+G09,6,Veronese Green,-8731547,0,0,0
+G12,6,Sea Green,-2955068,0,0,0
+G14,6,Apple Green,-6828144,0,0,0
+G16,6,Malachite,-10436200,0,0,0
+G17,6,Forest Green,-15420547,0,0,0
+G19,6,Bright Parrot Green,-13780598,0,0,0
+G20,6,Wax White,-1181989,0,0,0
+G21,6,Lime Green,-3873587,0,0,0
+G24,6,Willow,-3940172,0,0,0
+G28,6,Ocean Green,-15625118,0,0,0
+G29,6,Pine Tree Green,-15106979,0,0,0
+G40,6,Dim Green,-1773089,0,0,0
+G43,6,Pistachio,-2627672,0,0,0
+G46,6,Mistletoe,-12737677,0,0,0
+G82,6,Spring Dim Green,-3351879,0,0,0
+G85,6,Verdigris,-6437974,0,0,0
+G94,6,Grayish Olive,-6772858,0,0,0
+G99,6,Olive,-10518982,0,0,0
+N0,7,Neutral Gray No.0,-1249555,0,0,0
+N1,7,Neutral Gray No.1,-1907739,0,0,0
+N2,7,Neutral Gray No.2,-2434083,0,0,0
+N3,7,Neutral Gray No.3,-3026220,0,0,0
+N4,7,Neutral Gray No.4,-4407871,0,0,0
+N5,7,Neutral Gray No.5,-5723731,0,0,0
+N6,7,Neutral Gray No.6,-7039591,0,0,0
+N7,7,Neutral Gray No.7,-8947588,0,0,0
+N8,7,Neutral Gray No.8,-10263450,0,0,0
+N9,7,Neutral Gray No.9,-11776689,0,0,0
+N10,7,Neutral Gray No.10,-13553872,0,0,0
+R0000,8,Pink Beryl,-68625,0,0,0
+R000,8,Cherry White,-69401,0,0,0
+R00,8,Pinkish White,-70943,0,0,0
+R01,8,Pinkish Vanilla,-139048,0,0,0
+R02,8,Flesh,-142393,0,0,0
+R05,8,Salmon Red,-618117,0,0,0
+R08,8,Vermilion,-891052,0,0,0
+R11,8,Pale Cherry Pink,-138795,0,0,0
+R12,8,Light Tea Rose,-207935,0,0,0
+R14,8,Light Rouse,-681070,0,0,0
+R17,8,Lipstick Orange,-752532,0,0,0
+R20,8,Blush,-206897,0,0,0
+R21,8,Sardonyx,-343626,0,0,0
+R22,8,Light Prawn,-477263,0,0,0
+R24,8,Prawn,-887431,0,0,0
+R27,8,Cadmium Red,-962462,0,0,0
+R29,8,Lipstick Red,-1239221,0,0,0
+R30,8,Pale Yellowish Pink,-203809,0,0,0
+R32,8,Peach,-343622,0,0,0
+R35,8,Coral,-888443,0,0,0
+R37,8,Carmine,-1545100,0,0,0
+R39,8,Garnet,-3454854,0,0,0
+R43,8,Bougainvillaea,-1145714,0,0,0
+R46,8,Strong Red,-2077335,0,0,0
+R56,8,Currant,-2982763,0,0,0
+R59,8,Cardinal,-4763792,0,0,0
+R81,8,Rose Pink,-931626,0,0,0
+R83,8,Rose Mist,-942919,0,0,0
+R85,8,Rose Red,-2921837,0,0,0
+R89,8,Dark Red,-8574142,0,0,0
+RV0000,9,Evening Primrose,-857355,0,0,0
+RV000,9,Pale Purple,-728338,0,0,0
+RV00,9,Water Lily,-926998,0,0,0
+RV02,9,Sugared Almond Pink,-338458,0,0,0
+RV04,9,Shock Pink,-613441,0,0,0
+RV06,9,Cerise,-817489,0,0,0
+RV09,9,Fuchsia,-2133333,0,0,0
+RV10,9,Pale Pink,-135948,0,0,0
+RV11,9,Pink,-272675,0,0,0
+RV13,9,Tender Pink,-407081,0,0,0
+RV14,9,Begonia Pink,-748105,0,0,0
+RV17,9,Deep Magenta,-2392397,0,0,0
+RV19,9,Red Violet,-2987862,0,0,0
+RV21,9,Light Pink,-136985,0,0,0
+RV23,9,Pure Pink,-476471,0,0,0
+RV25,9,Dog Rose Flower,-748610,0,0,0
+RV29,9,Crimson,-1095552,0,0,0
+RV32,9,Shadow Pink,-338994,0,0,0
+RV34,9,Dark Pink,-413778,0,0,0
+RV42,9,Salmon Pink,-476234,0,0,0
+RV52,9,Cotton Candy,-406818,0,0,0
+RV55,9,Hollyhock,-1464886,0,0,0
+RV63,9,Begonia,-3105362,0,0,0
+RV66,9,Raspberry,-4691324,0,0,0
+RV69,9,Peony,-7645330,0,0,0
+RV91,9,Grayish Cherry,-1912608,0,0,0
+RV93,9,Smoky Purple,-1657398,0,0,0
+RV95,9,Baby Blossoms,-4815711,0,0,0
+RV99,9,Argyle Purple,-10860456,0,0,0
+T0,10,Toner Gray No.0,-1249555,0,0,0
+T1,10,Toner Gray No.1,-1381656,0,0,0
+T2,10,Toner Gray No.2,-2039586,0,0,0
+T3,10,Toner Gray No.3,-3026228,0,0,0
+T4,10,Toner Gray No.4,-4408391,0,0,0
+T5,10,Toner Gray No.5,-5724253,0,0,0
+T6,10,Toner Gray No.6,-7039600,0,0,0
+T7,10,Toner Gray No.7,-8948108,0,0,0
+T8,10,Toner Gray No.8,-10263457,0,0,0
+T9,10,Toner Gray No.9,-11777207,0,0,0
+T10,10,Toner Gray No.10,-13488595,0,0,0
+V0000,11,Rose Quartz,-987658,0,0,0
+V000,11,Pale Heath,-1448461,0,0,0
+V01,11,Heath,-1785383,0,0,0
+V04,11,Lilac,-1660210,0,0,0
+V05,11,Marigold,-1923382,0,0,0
+V06,11,Lavender,-3238462,0,0,0
+V09,11,Violet,-7908191,0,0,0
+V12,11,Pale Lilac,-1124375,0,0,0
+V15,11,Mallow,-2906419,0,0,0
+V17,11,Amethyst,-6253881,0,0,0
+V20,11,Wisteria,-1908499,0,0,0
+V22,11,Ash Lavender,-5066288,0,0,0
+V25,11,Pale Blackberry,-8028243,0,0,0
+V28,11,Eggplant,-9738610,0,0,0
+V91,11,Pale Grape,-1522480,0,0,0
+V93,11,Early Grape,-1719845,0,0,0
+V95,11,Light Grape,-4752216,0,0,0
+V99,11,Aubergine,-11386024,0,0,0
+W00,12,Warm Gray No.00,-789525,0,0,0
+W0,12,Warm Gray No.0,-1250076,0,0,0
+W1,12,Warm Gray No.1,-1579041,0,0,0
+W2,12,Warm Gray No.2,-2236971,0,0,0
+W3,12,Warm Gray No.3,-2960694,0,0,0
+W4,12,Warm Gray No.4,-4407881,0,0,0
+W5,12,Warm Gray No.5,-5723740,0,0,0
+W6,12,Warm Gray No.6,-7039601,0,0,0
+W7,12,Warm Gray No.7,-8947597,0,0,0
+W8,12,Warm Gray No.8,-10263457,0,0,0
+W9,12,Warm Gray No.9,-11776696,0,0,0
+W10,12,Warm Gray No.10,-13619413,0,0,0
+Y0000,13,Yellow Fluorite,-65804,0,0,0
+Y000,13,Pale Lemon,-791,0,0,0
+Y00,13,Barium Yellow,-66081,0,0,0
+Y02,13,Canary Yellow,-593002,0,0,0
+Y04,13,Acacia,-1186474,0,0,0
+Y06,13,Yellow,-68244,0,0,0
+Y08,13,Acid Yellow,-69120,0,0,0
+Y11,13,Pale Yellow,-1076,0,0,0
+Y13,13,Lemon Yellow,-264274,0,0,0
+Y15,13,Cadmium Yellow,-71316,0,0,0
+Y17,13,Golden Yellow,-7083,0,0,0
+Y18,13,Lightning Yellow,-70315,0,0,0
+Y19,13,Napoli Yellow,-5826,0,0,0
+Y21,13,Buttercup Yellow,-4414,0,0,0
+Y23,13,Yellowish Beige,-269389,0,0,0
+Y26,13,Mustard,-991897,0,0,0
+Y28,13,Lionet Gold,-3495831,0,0,0
+Y32,13,Cashmere,-401728,0,0,0
+Y35,13,Maize,-10119,0,0,0
+Y38,13,Honey,-11660,0,0,0
+YG0000,14,Lily White,-854048,0,0,0
+YG00,14,Mimosa Yellow,-1644898,0,0,0
+YG01,14,Green Bice,-1905742,0,0,0
+YG03,14,Yellow Green,-2168150,0,0,0
+YG05,14,Salad,-2693742,0,0,0
+YG06,14,Yellowish Green,-3874926,0,0,0
+YG07,14,Acid Green,-5910705,0,0,0
+YG09,14,Lettuce Green,-8207002,0,0,0
+YG11,14,Mignonette,-1707824,0,0,0
+YG13,14,Chartreuse,-11672161,0,0,0
+YG17,14,Grass Green,-9256618,0,0,0
+YG21,14,Anise,-526658,0,0,0
+YG23,14,New Leaf,-1643633,0,0,0
+YG25,14,Celadon Green,-3088005,0,0,0
+YG41,14,Pale Cobalt Green,-2757676,0,0,0
+YG45,14,Cobalt Green,-4924233,0,0,0
+YG61,14,Pale Moss,-2692650,0,0,0
+YG63,14,Pea Green,-6239582,0,0,0
+YG67,14,Moss,-8274036,0,0,0
+YG91,14,Putty,-2435154,0,0,0
+YG93,14,Grayish Yellow,-2960740,0,0,0
+YG95,14,Pale Olive,-3422626,0,0,0
+YG97,14,Spanish Olive,-6975741,0,0,0
+YG99,14,Marine Green,-11638251,0,0,0
+YR0000,15,Pale Chiffon,-3099,0,0,0
+YR000,15,Silk,-5417,0,0,0
+YR00,15,Powder Pink,-76099,0,0,0
+YR01,15,Peach Puff,-75070,0,0,0
+YR02,15,Light Orange,-205627,0,0,0
+YR04,15,Chrome Orange,-81047,0,0,0
+YR07,15,Cadmium Orange,-889031,0,0,0
+YR09,15,Chinese Orange,-961244,0,0,0
+YR12,15,Loquat,-7514,0,0,0
+YR14,15,Caramel,-79794,0,0,0
+YR15,15,Pumpkin Yellow,-280444,0,0,0
+YR16,15,Apricot,-84183,0,0,0
+YR18,15,Sanguine,-890052,0,0,0
+YR20,15,Yellowish Shade,-7745,0,0,0
+YR21,15,Cream,-664143,0,0,0
+YR23,15,Yellow Ochre,-1257589,0,0,0
+YR24,15,Pale Sepia,-995484,0,0,0
+YR27,15,Tuscan Orange,-2791880,0,0,0
+YR30,15,Macadamia Nut,-68902,0,0,0
+YR31,15,Light Reddish Yellow,-8536,0,0,0
+YR61,15,Yellowish Skin Pink,-140604,0,0,0
+YR65,15,Atoll,-348576,0,0,0
+YR68,15,Orange,-823262,0,0,0
+YR82,15,Mellow Peach,-145779,0,0,0
