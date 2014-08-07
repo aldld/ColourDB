@@ -28,11 +28,35 @@ public class MarkerDB {
 	private MarkerDBHelper dbHelper;
 	private SQLiteDatabase db;
 	
+	/**
+	 * Initialize a new instance of MarkerDB.
+	 * 
+	 * @param context context
+	 */
 	private MarkerDB(Context context) {
 		dbHelper = new MarkerDBHelper(context);
 		db = dbHelper.getWritableDatabase();
 	}
 	
+	/**
+	 * Creates the MarkerDB instance using a workaround for use when there is an
+	 * existing reference to the database exists,to avoid issues regarding locks.
+	 * 
+	 * @param context context
+	 * @param db existing database reference
+	 */
+	private MarkerDB(Context context, SQLiteDatabase db) {
+		dbHelper = new MarkerDBHelper(context);
+		this.db = db;
+	}
+	
+	/**
+	 * Return a reference to the unique instance of MarkerDB, creating it if it
+	 * does not already exist.
+	 * 
+	 * @param context context
+	 * @return reference to the unique instance of MarkerDB
+	 */
 	public static MarkerDB getInstance(Context context) {
 		if (instance == null) {
 			instance = new MarkerDB(context.getApplicationContext());
@@ -41,6 +65,29 @@ public class MarkerDB {
 		return instance;
 	}
 	
+	/**
+	 * Return a reference to the unique instance of MarkerDB, creating it if it
+	 * does not already exist, using the workaround to avoid locks when a
+	 * reference to the database is already present.
+	 * 
+	 * @param context context
+	 * @param db existing database reference
+	 * @return reference to the unique instance of MarkerDB
+	 */
+	public static MarkerDB getInstance(Context context, SQLiteDatabase db) {
+		if (instance == null) {
+			instance = new MarkerDB(context.getApplicationContext(), db);
+		}
+		
+		return instance;
+	}
+	
+	/**
+	 * 
+	 * @param where
+	 * @param whereArgs
+	 * @return
+	 */
 	public Marker[] queryMarkers(String where, String[] whereArgs) {
 		Cursor c = db.query(MarkerDBContract.Marker.TABLE_NAME, fullProjection,
 				where, whereArgs, null, null, MarkerDBContract.Marker.COL_ID + " ASC");
