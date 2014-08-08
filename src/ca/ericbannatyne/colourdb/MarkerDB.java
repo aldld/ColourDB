@@ -83,10 +83,12 @@ public class MarkerDB {
 	}
 	
 	/**
+	 * Performs a query on the marker table and returns the result as an array
+	 * of Marker objects.
 	 * 
-	 * @param where
-	 * @param whereArgs
-	 * @return
+	 * @param where SQL WHERE clause
+	 * @param whereArgs arguments for the WHERE clause
+	 * @return query results as an array of Marker objects
 	 */
 	public Marker[] queryMarkers(String where, String[] whereArgs) {
 		Cursor c = db.query(MarkerDBContract.Marker.TABLE_NAME, fullProjection,
@@ -111,6 +113,14 @@ public class MarkerDB {
 		return result;
 	}
 	
+	/**
+	 * Sets the state of whether or not the user has a marker of the colour with
+	 * the given ID.
+	 * 
+	 * @param id the ID
+	 * @param haveIt the value to set
+	 * @return true if any rows were affected
+	 */
 	public boolean setHaveIt(int id, boolean haveIt) {
 		ContentValues values = new ContentValues();
 		values.put(MarkerDBContract.Marker.COL_HAVE_IT, haveIt ? 1 : 0);
@@ -118,6 +128,14 @@ public class MarkerDB {
 				MarkerDBContract.Marker.COL_ID + "=?", new String[] { "" + id }) > 0;
 	}
 	
+	/**
+	 * Sets the state of whether or not the marker with the given ID is in need
+	 * of a refill.
+	 * 
+	 * @param id the ID
+	 * @param needsRefill the value to be set
+	 * @return true if any rows were affected
+	 */
 	public boolean setNeedsRefill(int id, boolean needsRefill) {
 		ContentValues values = new ContentValues();
 		values.put(MarkerDBContract.Marker.COL_NEEDS_REFILL, needsRefill ? 1 : 0);
