@@ -107,6 +107,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_all_colours),
                         getString(R.string.title_my_colours),
                         getString(R.string.title_need_refills),
+                        getString(R.string.title_wish_list)
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;

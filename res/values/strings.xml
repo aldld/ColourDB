@@ -6,6 +6,7 @@
     <string name="title_all_colours">All Colours</string>
     <string name="title_my_colours">My Colours</string>
     <string name="title_need_refills">Need Refills</string>
+    <string name="title_wish_list">Wish List</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -13,5 +14,8 @@
     <string name="search_button">Search</string>
     <string name="needs_refill">Needs Refill</string>
     <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
+    
+    <string name="add_to_wish_list">Add to Wish List</string>
+    <string name="remove_from_wish_list">Remove from Wish List</string>
 
 </resources>

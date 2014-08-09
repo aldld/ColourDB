@@ -72,6 +72,9 @@ public class ColourGrid extends ActionBarActivity implements
 		case 3:
 			mTitle = getString(R.string.title_need_refills);
 			break;
+		case 4:
+			mTitle = getString(R.string.title_wish_list);
+			break;
 		}
 	}
 
@@ -194,21 +197,35 @@ public class ColourGrid extends ActionBarActivity implements
 		menu.setHeaderTitle(marker.getCode() + ": " + marker.getName());
 		
 		menu.getItem(0).setChecked(marker.needsRefill());
+		menu.getItem(1).setTitle(
+				marker.wantIt() ? R.string.remove_from_wish_list
+						: R.string.add_to_wish_list);
 	}
 	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+
+		GridView gridView = (GridView) info.targetView.getParent();
+		ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
+		
+		Marker marker = (Marker) adapter.getItem(info.position);
+		
 		switch (item.getItemId()) {
 		case R.id.needs_refill:
 			item.setChecked(!item.isChecked());
 			
-			GridView gridView = (GridView) info.targetView.getParent();;
-			ColourAdapter adapter = (ColourAdapter) gridView.getAdapter();
-			
-			Marker marker = (Marker) adapter.getItem(info.position);
 			marker.setNeedsRefill(!marker.needsRefill());
 			if (adapter.getFilter() == ColourAdapter.FILTER_NEED_REFILLS) {
+				adapter.refresh();
+				adapter.notifyDataSetChanged();
+			}
+			
+			return true;
+
+		case R.id.wish_list:
+			marker.setWantIt(!marker.wantIt());
+			if (adapter.getFilter() == ColourAdapter.FILTER_WISH_LIST) {
 				adapter.refresh();
 				adapter.notifyDataSetChanged();
 			}

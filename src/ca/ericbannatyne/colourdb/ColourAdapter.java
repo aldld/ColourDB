@@ -15,6 +15,7 @@ public class ColourAdapter extends BaseAdapter {
 	public static final int FILTER_ALL_COLOURS = 1;
 	public static final int FILTER_MY_COLOURS = 2;
 	public static final int FILTER_NEED_REFILLS = 3;
+	public static final int FILTER_WISH_LIST = 4;
 
 	private Context mContext;
 	private MarkerDB markerDB;
@@ -24,7 +25,8 @@ public class ColourAdapter extends BaseAdapter {
 			null,
 			"", 
 			MarkerDBContract.Marker.COL_HAVE_IT + "=1",
-			MarkerDBContract.Marker.COL_NEEDS_REFILL + "=1"
+			MarkerDBContract.Marker.COL_NEEDS_REFILL + "=1",
+			MarkerDBContract.Marker.COL_WANT_IT + "=1"
 			};
 	
 	private Marker[] markerArray;

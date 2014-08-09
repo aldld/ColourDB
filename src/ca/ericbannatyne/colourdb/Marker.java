@@ -106,7 +106,8 @@ public class Marker {
 	 * @param wantIt the wantIt to set
 	 */
 	public void setWantIt(boolean wantIt) {
-		this.wantIt = wantIt;
+		if (markerDB.setWantIt(id, wantIt))
+			this.wantIt = wantIt;
 	}
 
 	/**
