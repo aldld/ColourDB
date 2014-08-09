@@ -114,6 +114,21 @@ public class MarkerDB {
 	}
 	
 	/**
+	 * Helper method for setting the values of boolean columns.
+	 * 
+	 * @param id the ID
+	 * @param columnName the name of the column to set
+	 * @param value the value to set
+	 * @return true if any rows were affected
+	 */
+	private boolean setBoolean(int id, String columnName, boolean value) {
+		ContentValues values = new ContentValues();
+		values.put(columnName, value ? 1 : 0);
+		return db.update(MarkerDBContract.Marker.TABLE_NAME, values,
+				MarkerDBContract.Marker.COL_ID + "=?", new String[] { "" + id }) > 0;
+	}
+	
+	/**
 	 * Sets the state of whether or not the user has a marker of the colour with
 	 * the given ID.
 	 * 
@@ -122,10 +137,7 @@ public class MarkerDB {
 	 * @return true if any rows were affected
 	 */
 	public boolean setHaveIt(int id, boolean haveIt) {
-		ContentValues values = new ContentValues();
-		values.put(MarkerDBContract.Marker.COL_HAVE_IT, haveIt ? 1 : 0);
-		return db.update(MarkerDBContract.Marker.TABLE_NAME, values,
-				MarkerDBContract.Marker.COL_ID + "=?", new String[] { "" + id }) > 0;
+		return setBoolean(id, MarkerDBContract.Marker.COL_HAVE_IT, haveIt);
 	}
 	
 	/**
@@ -137,10 +149,7 @@ public class MarkerDB {
 	 * @return true if any rows were affected
 	 */
 	public boolean setNeedsRefill(int id, boolean needsRefill) {
-		ContentValues values = new ContentValues();
-		values.put(MarkerDBContract.Marker.COL_NEEDS_REFILL, needsRefill ? 1 : 0);
-		return db.update(MarkerDBContract.Marker.TABLE_NAME, values,
-				MarkerDBContract.Marker.COL_ID + "=?", new String[] { "" + id }) > 0;
+		return setBoolean(id, MarkerDBContract.Marker.COL_NEEDS_REFILL, needsRefill);
 	}
 
 }
