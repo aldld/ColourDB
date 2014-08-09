@@ -151,5 +151,16 @@ public class MarkerDB {
 	public boolean setNeedsRefill(int id, boolean needsRefill) {
 		return setBoolean(id, MarkerDBContract.Marker.COL_NEEDS_REFILL, needsRefill);
 	}
+	
+	/**
+	 * Adds or removes the marker with the given ID from the wish list.
+	 * 
+	 * @param id the ID
+	 * @param wantIt true to add it to the wish list
+	 * @return true if any rows were affected
+	 */
+	public boolean setWantIt(int id, boolean wantIt) {
+		return setBoolean(id, MarkerDBContract.Marker.COL_WANT_IT, wantIt);
+	}
 
 }
