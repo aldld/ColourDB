@@ -143,15 +143,24 @@ public class ColourGrid extends ActionBarActivity implements
 			
 			
 			int filter = getArguments().getInt(ARG_SECTION_NUMBER);
-			
-			if (filter == ColourAdapter.FILTER_NEED_REFILLS) { 
-				// If no markers needing refills to display, explain how to
-				// mark a colour as needing a refill.
-				TextView needsRefillMessage = (TextView) rootView.findViewById(
-						R.id.need_refills_empty);
 
-				colourGrid.setEmptyView(needsRefillMessage);
+			TextView emptyView = (TextView) rootView.findViewById(
+					R.id.empty_grid_view);
+			
+			// Messages to display when particular views are empty
+			switch (filter) {
+			case ColourAdapter.FILTER_MY_COLOURS:
+				emptyView.setText(R.string.my_colours_empty);
+				break;
+			case ColourAdapter.FILTER_NEED_REFILLS:
+				emptyView.setText(R.string.need_refills_empty);
+				break;
+			case ColourAdapter.FILTER_WISH_LIST:
+				emptyView.setText(R.string.wish_list_empty);
+				break;
 			}
+
+			colourGrid.setEmptyView(emptyView);
 
 			registerForContextMenu(colourGrid);
 
@@ -195,6 +204,7 @@ public class ColourGrid extends ActionBarActivity implements
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
 		Marker marker = (Marker) adapter.getItem(info.position);
 		menu.setHeaderTitle(marker.getCode() + ": " + marker.getName());
+		// TODO: Set menu header icon
 		
 		menu.getItem(0).setChecked(marker.needsRefill());
 		menu.getItem(1).setTitle(

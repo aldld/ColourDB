@@ -17,11 +17,12 @@
 	    android:stretchMode="columnWidth"
 	    android:gravity="center"
         />
-    <TextView android:id="@+id/need_refills_empty"
-        android:text="@string/need_refills_empty"
+    <TextView android:id="@+id/empty_grid_view"
+        android:text="@string/wish_list_empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         />
+    
     
 </LinearLayout>

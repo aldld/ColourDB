@@ -13,9 +13,12 @@
 
     <string name="search_button">Search</string>
     <string name="needs_refill">Needs Refill</string>
-    <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
     
     <string name="add_to_wish_list">Add to Wish List</string>
     <string name="remove_from_wish_list">Remove from Wish List</string>
+
+    <string name="my_colours_empty">Too add a colour to \"My Colours,\" tap its colour square.</string>
+    <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
+    <string name="wish_list_empty">To add a marker to your wish list, touch and hold its colour square and select \"Add to Wish List.\"</string>
 
 </resources>
