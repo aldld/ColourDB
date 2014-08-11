@@ -34,6 +34,13 @@ public class Marker {
 		return null;
 	}
 	
+	/**
+	 * Sets the text colour of the given textView for proper contrast with this
+	 * marker's colour when used as a background colour.
+	 * 
+	 * @param textView
+	 *            the TextView
+	 */
 	public void setTextColorFromBakground(TextView textView) {
 		float[] hsv = new float[3];
 		Color.colorToHSV(getColor(), hsv);
@@ -45,6 +52,15 @@ public class Marker {
 		}
 	}
 	
+	/**
+	 * Set the text and background colours of the given textView in accordance
+	 * with the colour of this marker.
+	 * 
+	 * @param textView
+	 *            the TextView
+	 * @param wishList
+	 *            whether this method is being called from the wish list view
+	 */
 	public void setViewColor(TextView textView, boolean wishList) {
 		if (haveIt() || wishList) {
 			textView.setBackgroundColor(getColor());
