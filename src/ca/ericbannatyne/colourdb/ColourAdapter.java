@@ -1,7 +1,6 @@
 package ca.ericbannatyne.colourdb;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,9 +83,16 @@ public class ColourAdapter extends BaseAdapter {
 		}
 
 		textView.setText(marker.getCode());
-		textView.setBackgroundColor(marker.haveIt() ? marker.getColor() : Color.WHITE);
+		/*
+		if (filter == FILTER_WISH_LIST) {
+			textView.setBackgroundColor(marker.getColor());
+		} else {
+			textView.setBackgroundColor(marker.haveIt() ? marker.getColor()
+					: Color.WHITE);
+		}
+		*/
 
-		marker.setViewColor(textView);
+		marker.setViewColor(textView, filter == FILTER_WISH_LIST);
 		return textView;
 	}
 

@@ -20,6 +20,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ColourGrid extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -174,8 +175,21 @@ public class ColourGrid extends ActionBarActivity implements
 					ColourAdapter adapter = (ColourAdapter) parent.getAdapter();
 					Marker marker = (Marker) adapter.getItem(position);
 					
+					if (adapter.getFilter() == ColourAdapter.FILTER_WISH_LIST) {
+						// On the wish list display
+						marker.setHaveIt(true);
+						marker.setWantIt(false);
+
+						adapter.refresh();
+						adapter.notifyDataSetChanged();
+						Toast.makeText(view.getContext(),
+								R.string.toast_my_colours, Toast.LENGTH_SHORT)
+								.show();
+						return;
+					}
+					
 					marker.setHaveIt(!marker.haveIt());
-					marker.setViewColor(textView);
+					marker.setViewColor(textView,  false);
 				}
 
 			});
@@ -229,6 +243,15 @@ public class ColourGrid extends ActionBarActivity implements
 			if (adapter.getFilter() == ColourAdapter.FILTER_NEED_REFILLS) {
 				adapter.refresh();
 				adapter.notifyDataSetChanged();
+			} else {
+				if (marker.needsRefill())
+					Toast.makeText(gridView.getContext(),
+							R.string.toast_need_refills_added, Toast.LENGTH_SHORT)
+							.show();
+				else
+					Toast.makeText(gridView.getContext(),
+							R.string.toast_need_refills_removed, Toast.LENGTH_SHORT)
+							.show();
 			}
 			
 			return true;
@@ -238,6 +261,15 @@ public class ColourGrid extends ActionBarActivity implements
 			if (adapter.getFilter() == ColourAdapter.FILTER_WISH_LIST) {
 				adapter.refresh();
 				adapter.notifyDataSetChanged();
+			} else {
+				if (marker.wantIt())
+					Toast.makeText(gridView.getContext(),
+							R.string.toast_wish_list_added, Toast.LENGTH_SHORT)
+							.show();
+				else
+					Toast.makeText(gridView.getContext(),
+							R.string.toast_wish_list_removed, Toast.LENGTH_SHORT)
+							.show();
 			}
 			
 			return true;

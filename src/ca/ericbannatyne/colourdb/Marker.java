@@ -45,8 +45,8 @@ public class Marker {
 		}
 	}
 	
-	public void setViewColor(TextView textView) {
-		if (haveIt()) {
+	public void setViewColor(TextView textView, boolean wishList) {
+		if (haveIt() || wishList) {
 			textView.setBackgroundColor(getColor());
 			setTextColorFromBakground(textView);
 		} else {

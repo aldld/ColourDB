@@ -17,8 +17,16 @@
     <string name="add_to_wish_list">Add to Wish List</string>
     <string name="remove_from_wish_list">Remove from Wish List</string>
 
+    <!-- GridView empty views -->
     <string name="my_colours_empty">Too add a colour to \"My Colours,\" tap its colour square.</string>
     <string name="need_refills_empty">When one of your markers needs to be refilled, touch and hold its colour square and check \"Needs Refill.\"</string>
     <string name="wish_list_empty">To add a marker to your wish list, touch and hold its colour square and select \"Add to Wish List.\"</string>
+    
+    <!-- Toasts -->
+    <string name="toast_my_colours">Added to \"My Colours.\"</string>
+    <string name="toast_need_refills_added">Added to \"Need Refills.\"</string>
+    <string name="toast_need_refills_removed">Removed from \"Need Refills.\"</string>
+    <string name="toast_wish_list_added">Added to Wish List.</string>
+    <string name="toast_wish_list_removed">Removed from Wish List.</string>
 
 </resources>
